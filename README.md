@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# BLOG-WEBSITE-
+A fully functional blog website built using the MERN stack (MongoDB, Express, React, Node.js). This project allows users to create, read, update, and delete blog posts. Key features include user authentication, a rich-text editor for creating posts, and responsive design for seamless usability across devices.
+>>>>>>> f1ff616f41f8a880bbb664e02e044ffce3a2c3b9
