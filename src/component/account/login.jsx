@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Box, Button, TextField, styled, Typography } from '@mui/material';
 
 const Containers_image = styled('img')({
@@ -62,28 +64,41 @@ const Login = () => {
     const imageurl =
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSdReLeTDjSn6-KVDiVMd4KJ7bE9TPxn82_g&s';
 
+    const [account, toggleAccount ] = useState('login');
+
+    const toggleSignup = () =>{
+        toggleAccount('signup');
+    }
+
+    const toggleLogin = () =>{
+        toggleAccount('login');
+    }
+
     return (
         <Box sx={{ position: 'relative', height: '100vh' }}>
             <Containers_image src={conatiner} alt="container image" />
             <Component>
                 <Box>
                     <Image src={imageurl} alt="LOGIN image" />
-                    <Wrapper>
-                        <TextField label="Email" variant="standard"/>
-                        <TextField label="Password" variant="standard"/>
-                        <LoginButton variant="contained">Login</LoginButton>
-                        <Text style={{textAlign: 'center'}} >OR</Text>
-                        <SignupButton>Create an Account</SignupButton>
-                    </Wrapper>   
-                    {/* <Wrapper>
-                        <TextField label="Name" variant='standard' ></TextField>
-                        <TextField label="Email" variant="standard" />
-                        <TextField label="Password" variant="standard" />
-                        <SignupButton>Signup</SignupButton>
-                        <Text style={{ textAlign: 'center' }} >OR</Text>
-                        <LoginButton variant="contained">Already have an Account</LoginButton>
-                    </Wrapper> */}
-
+                    {
+                        account === 'login' ?
+                            <Wrapper>
+                                <TextField label="Email" variant="standard"/>
+                                <TextField label="Password" variant="standard"/>
+                                <LoginButton variant="contained">Login</LoginButton>
+                                <Text style={{textAlign: 'center'}} >OR</Text>
+                                <SignupButton onClick={() => toggleSignup()} >Create an Account</SignupButton>
+                            </Wrapper>   
+                        :
+                            <Wrapper>
+                                <TextField label="Name" variant='standard' ></TextField>
+                                <TextField label="Email" variant="standard" />
+                                <TextField label="Password" variant="standard" />
+                                <SignupButton>Signup</SignupButton>
+                                <Text style={{ textAlign: 'center' }} >OR</Text>
+                                <LoginButton variant="contained" onClick={() => toggleLogin()} >Already have an Account</LoginButton>
+                            </Wrapper>
+                    }   
                 </Box>
             </Component>
         </Box>
