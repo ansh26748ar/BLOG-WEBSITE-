@@ -74,6 +74,9 @@ const Login = () => {
         toggleAccount('login');
     }
 
+    const onInputChange =(e) =>{
+        console.log(e.target.name, e.target.value);
+    }
     return (
         <Box sx={{ position: 'relative', height: '100vh' }}>
             <Containers_image src={conatiner} alt="container image" />
@@ -91,9 +94,9 @@ const Login = () => {
                             </Wrapper>   
                         :
                             <Wrapper>
-                                <TextField label="Name" variant='standard' ></TextField>
-                                <TextField label="Email" variant="standard" />
-                                <TextField label="Password" variant="standard" />
+                                <TextField label="Name" onChange={(e) => onInputChange(e)} name='name' variant='standard' ></TextField>
+                                <TextField label="Email" onChange={(e) => onInputChange(e)} name='email' variant="standard" />
+                                <TextField label="Password" onChange={(e) => onInputChange(e)} name='password' variant="standard" />
                                 <SignupButton>Signup</SignupButton>
                                 <Text style={{ textAlign: 'center' }} >OR</Text>
                                 <LoginButton variant="contained" onClick={() => toggleLogin()} >Already have an Account</LoginButton>
